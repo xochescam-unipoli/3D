@@ -6,7 +6,7 @@ public class CharController : MonoBehaviour
 {
     CharacterController characterController;
 
-    //Movements variables
+    //Movements variablesss
     public float walk = 5.0f,
                  jump = 7.0f,
                  gravity = 22.0f;
