@@ -45,9 +45,9 @@ public class CharController : MonoBehaviour
         //Delimit the rotation in x or vertically
         v_mouse = Mathf.Clamp(v_mouse, minRot, maxRot);
 
-        //Rotate the camera
-        cam.transform.localEulerAngles = new Vector3(-v_mouse, 0, 0);
-        transform.Rotate(0, h_mouse, 0);
+        //Rotate the camera in x and y
+        cam.transform.localEulerAngles = new Vector3(-v_mouse, 0, 0); //x
+        transform.Rotate(0, h_mouse, 0); //y
     }
 
     public void movements()
@@ -56,7 +56,7 @@ public class CharController : MonoBehaviour
         if (characterController.isGrounded)
         {
             //Give values to vector3 in x, y, z
-            //Input.GetAxis("Horizontal") = WD || Arrow keys < >
+            //Input.GetAxis("Horizontal") = AD || Arrow keys < >
             move = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
 
             //Move the direction of the character according with the camera direction and the keys
