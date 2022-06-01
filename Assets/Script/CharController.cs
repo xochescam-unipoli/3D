@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharController : MonoBehaviour
 {
-    CharacterController characterController;
+    CharacterController FPController;
 
     //Movements variablesss
     public float walk = 5.0f,
@@ -26,7 +26,7 @@ public class CharController : MonoBehaviour
     void Start()
     {
         //Assign component to variable
-        characterController = GetComponent<CharacterController>();
+        FPController = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
@@ -53,7 +53,7 @@ public class CharController : MonoBehaviour
     public void movements()
     {
         //Verify if the character is in the ground or not
-        if (characterController.isGrounded)
+        if (FPController.isGrounded)
         {
             //Give values to vector3 in x, y, z
             //Input.GetAxis("Horizontal") = AD || Arrow keys < >
@@ -69,7 +69,7 @@ public class CharController : MonoBehaviour
         move.y -= gravity * Time.deltaTime;
 
         //Delimit the user movements with collisions
-        characterController.Move(move * Time.deltaTime);
+        FPController.Move(move * Time.deltaTime);
     }
 
     public void jumping()
